@@ -168,9 +168,12 @@ class Scanner(object):
 #			output += '%s\n' % (repr(t),)
 #		return output
 
-    def print_line_with_pointer(self, pos, length=0, out=sys.stderr):
+    def print_line_with_pointer(self, pos, length=0, out=None):
         """Print the line of 'text' that includes position 'p',
         along with a second line with a single caret (^) at position p"""
+
+        if out is None:
+            out = sys.stderr
 
         file,line,p = pos
         if file != self.filename:
