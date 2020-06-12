@@ -22,7 +22,7 @@ from yapps import parsetree
 
 ######################################################################
 def cleanup_choice(rule, lst):
-    if len(lst) == 0: return Sequence(rule, [])
+    if len(lst) == 0: return parsetree.Sequence(rule, [])
     if len(lst) == 1: return lst[0]
     return parsetree.Choice(rule, *tuple(lst))
 
